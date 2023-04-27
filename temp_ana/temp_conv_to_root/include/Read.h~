@@ -1,0 +1,58 @@
+#ifndef TreeRead_h_
+#define TreeRead_h_
+
+#include<TROOT.h>
+#include<TChain.h>
+#include<TFile.h>
+#include<TH1.h>
+#include<TF1.h>
+#include<TH2.h>
+#include<TGraph.h>
+#include<TCanvas.h>
+#include<TLegend.h>
+#include<TObjArray.h>
+#include<vector>
+
+
+using namespace std;
+
+class treeRead
+{
+    public:
+    static const int totalLayerNo = 32;
+    static const int chipNo = 6;
+    static const int channelNo = 36;
+    static const int memoryNo = 2;
+    static const int tempSensorNo = 16;
+
+    private:
+    vector<double>* _temp;
+    double _triggerID;
+
+    TFile* tempfile[totalLayerNo];
+    TTree* fNtuple;
+
+    public:
+    void  Init();//定义内联函数，也可以在实现的时候加上inline关键字，都只是一个提示
+     treeRead(string temp_name,string hist_name);
+     void findLayerID(string dataname);
+    const string Elink[totalLayerNo] = {"-040-","-041-","-042-","-043-","-044-","-045-","-046-","-047-","-048-","-049-","-04A-","-04B-","-04C-","-04D-","-04E-","-04F-",
+                                          "-050-","-051-","-052-","-053-","-054-","-055-","-056-","-057-","-058-","-059-","-05A-","-05B-","-05C-","-05D-","-05E-","-05F-"};
+    int LayerID=100;
+    vector<int> realLayerID;
+
+    protected:
+    TF1* chargefun;
+    TF1* timefun;
+    TFile *outfile;
+    TTree *tree;
+    void Clear();
+    vector< vector<double> > tempLayer;
+
+    TGraph* gp[totalLayerNo][tempSensorNo];
+    TObjArray* Hlist;
+    TCanvas* cc[totalLayerNo];
+    // Memory Cells Level
+  };
+
+#endif

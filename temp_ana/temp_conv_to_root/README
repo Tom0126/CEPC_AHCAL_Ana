@@ -1,0 +1,3 @@
+source /mnt2/AHCAL/home/root/root_v6.14.04/bin/thisroot.sh
+make
+source execute.sh
