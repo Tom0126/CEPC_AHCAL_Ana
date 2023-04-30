@@ -35,7 +35,7 @@ if __name__=='__main__':
 
     # text='Beginning Date:' +'\n'+temperature_file[temperature_file.find('2'):]
     text=''
-    plotTempTimeAverage('AverageTempvsTime.png',times,temps,'Average Temperature vs Time ',text,gap=int(num_entry/10),
+    plotTempTimeAverage('AverageTempvsTime.png',times,temps,'Average Temperature vs Time ',text,gap=int(num_entry/9),
                         room_temp=room_temp)
     # plotTempTimePoint('PointTime.png',times,temps[:,1,0],'Point: ({},{}) vs Time'.format(coor[0,0],coor[0,1]),start_time)
     # for i in range(len(coor)):
