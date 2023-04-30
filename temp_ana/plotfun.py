@@ -82,9 +82,9 @@ def plotTempTimeAverage(fig_name, time, data, title, text,gap=100,room_temp=0):
     lex_x1 = len(time2)
     x_ticks = np.arange(0, lex_x1 * gap, gap)
     # to ensure that the last one could be included
-    if ((len_x0-1)%gap)!=0:
-        time2=np.concatenate((time2,np.array([time[-1]])))
-        x_ticks=np.concatenate((x_ticks,np.array([len_x0-1])))
+    # if ((len_x0-1)%gap)!=0:
+    #     time2=np.concatenate((time2,np.array([time[-1]])))
+    #     x_ticks=np.concatenate((x_ticks,np.array([len_x0-1])))
     plt.xticks(x_ticks, getTimeTicks(time2), rotation=-20,fontsize=20)
     plt.yticks(np.linspace(0.9*(np.amin(averages-room_temp)), 1.1*(np.amax(averages-room_temp)),10),fontsize=20)
 
