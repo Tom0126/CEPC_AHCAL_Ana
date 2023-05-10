@@ -1,9 +1,13 @@
+import os.path
+
 from ReadRoot import *
 import numpy as np
 import pandas as pd
 from plotfun import *
 from processData import *
 from merge import combine
+from matplotlib import pyplot as plt
+
 
 temperature_file_1 = '/home/songsy/CEPC_2023TB/temp_tb_result/20230424_151427.root'
 temperature_file_2 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230425_163512.root'
@@ -11,10 +15,17 @@ temperature_file_3 = '/home/songsy/CEPC_2023TB/temp_tb_result/20230425_212850.ro
 temperature_file_4 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230427_235657.root'
 temperature_file_5 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230428_215649.root'
 temperature_file_6 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230429_145247.root'
+temperature_file_7 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230503_002603.root'
+temperature_file_8 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230505_154221.root'
+temperature_file_9 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230507_000947.root'
+temperature_file_10 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230508_163600.root'
+temperature_file_11 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230509_124011.root'
 
 temperature_file_lists = [
     temperature_file_1, temperature_file_2, temperature_file_3,
     temperature_file_4, temperature_file_5, temperature_file_6,
+    temperature_file_7, temperature_file_8, temperature_file_9,
+    temperature_file_10, temperature_file_11
 ]
 
 for i in range(len(temperature_file_lists)):
@@ -57,5 +68,17 @@ num_entry=len(temps)
 text=''
 plotTempTimeAverage('AverageTempvsTime_combine.png',times,temps,'Average Temperature vs Time ',text,gap=int(num_entry/10),
                     room_temp=room_temp)
+
+
+temp_avg_layer=np.mean(temps,axis=2)
+
+#
+# for i in range(40):
+#     fig2 = plt.figure(figsize=(12, 10))
+#     plt.plot(np.arange(len(temp_avg_layer)), temp_avg_layer[:,i],label=str(i+1))
+#     plt.legend(loc='center left')
+#     plt.savefig(os.path.join('/home/songsy/CEPC_2023TB/temp_ana/figure/temp', '{}.png'.format(i+1)))
+#     plt.close(fig2)
+
 # plotTempTimeAverage('AverageTempvsTime.png', times, temps, 'AHCAL Average Temperature vs Time ', '', gap=1100,
 #                     room_temp=room_temp)
