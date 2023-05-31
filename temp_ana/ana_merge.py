@@ -20,12 +20,17 @@ temperature_file_8 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_res
 temperature_file_9 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230507_000947.root'
 temperature_file_10 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230508_163600.root'
 temperature_file_11 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230509_124011.root'
+temperature_file_12 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230516_221810.root'
+temperature_file_13 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230526_091446.root'
+temperature_file_14 = '/home/songsy/CEPC_2023TB/temp_ana/temp_conv_to_root/bt_result/20230530_140251.root'
+
 
 temperature_file_lists = [
     temperature_file_1, temperature_file_2, temperature_file_3,
     temperature_file_4, temperature_file_5, temperature_file_6,
-    temperature_file_7, temperature_file_8, temperature_file_9,
-    temperature_file_10, temperature_file_11
+    temperature_file_7, temperature_file_8,
+    temperature_file_11, temperature_file_12,
+    temperature_file_13, temperature_file_14,
 ]
 
 for i in range(len(temperature_file_lists)):

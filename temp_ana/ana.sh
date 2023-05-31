@@ -4,7 +4,7 @@ file_name=20230530_140251 # change this name
 
 source ./temp_conv_to_root/root_setup.sh
 
-DIR_IN=/mnt2/BeamData/2023/AHCAL/temp
+DIR_IN=/mnt2/BeamData/2023/PS/AHCAL/temperature/
 DIR_OUT=./temp_conv_to_root/bt_result
 ./temp_conv_to_root/main ${DIR_IN}/${file_name}.dat ${DIR_OUT} ${DIR_OUT}/${file_name}.root
 

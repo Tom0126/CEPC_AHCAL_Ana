@@ -11,8 +11,8 @@ def combine(file_lists):
     index = 1
     while index < length:
         temp_i, time_i = readRootFileTemperature((file_lists[index]))
-        temps = np.concatenate([temps, temp_i])
-        times = np.concatenate([times, time_i])
+        temps = np.concatenate([temps, temp_i[5:]])
+        times = np.concatenate([times, time_i[5:]])
         index += 1
     return temps, times
 
